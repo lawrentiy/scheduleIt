@@ -1,0 +1,55 @@
+<template name="scheduleItSelector">
+    <div class="container-fluid scheduleItSelector">
+        {{#each data}}
+            {{> sitItem}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="sitItem">
+    {{#if caption}}
+        <div class="row">
+            <b>{{caption}}</b>
+        </div>
+    {{/if}}
+    <div class="row selectable {{#if isChecked}}selected{{else}}inactive{{/if}}">
+        <div class="col-md-1 col-sm-1" style="padding: 4px;"><input {{isChecked}} type="checkbox" class="js-switch"/></div>
+        <div class="col-md-11 col-sm-11">
+            {{> Template.dynamic template=template data=value}}
+        </div>
+    </div>
+</template>
+
+<template name="daily">
+    {{>weekDays field='dayOfWeek'}}
+    Каждую {{>buttonDropdown field='d1' data=d1}} неделю
+</template>
+
+<template name="monthly1">
+    Каждое
+    {{>buttonDropdown field='d3' data=d3}} число каждый
+    {{>buttonDropdown field='d2' data=d2}}
+    месяц
+</template>
+
+<template name="monthly2">
+    Каждый
+    {{>buttonDropdown field='d2' data=d2}}
+    {{>buttonDropdown field='d4' data=d4}}
+    каждого
+    {{>buttonDropdown field='d5' data=d5}}
+    месяца
+</template>
+
+<template name="yearly1">
+    Каждое
+    {{>buttonDropdown field='d3' data=d3}}
+    {{>buttonDropdown field='d6' data=d6}}
+</template>
+
+<template name="yearly2">
+    Каждый
+    {{>buttonDropdown field='d2' data=d2}}
+    {{>buttonDropdown field='d4' data=d4}}
+    {{>buttonDropdown field='d6' data=d6}}
+</template>

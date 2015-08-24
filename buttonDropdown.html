@@ -1,0 +1,12 @@
+<template name="buttonDropdown">
+    <div class="dropdown" style="display: inline;">
+        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            {{{selected.caption}}}
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            {{#each data}}
+                <li><a role="menuitem" tabindex="-1" href="#">{{{caption}}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

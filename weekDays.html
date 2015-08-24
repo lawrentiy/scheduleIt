@@ -1,0 +1,7 @@
+<template name="weekDays">
+    <div class="btn-group btn-group-sm week-days">
+        {{#each data}}
+            <div class="btn btn-default {{#if isSelected}}active{{/if}}">{{caption}}</div>
+        {{/each}}
+    </div>
+</template>
